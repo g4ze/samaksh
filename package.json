@@ -1,0 +1,57 @@
+{
+  "name": "borrow-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
+    "test": "jest --watchAll --detectOpenHandles",
+    "build": "cd client && npm install && npm run build"
+  },
+  "contributors": [
+    {
+      "name": "Aryse Tansy",
+      "url": "http://pagano.dev/"
+    },
+    {
+      "name": "Jacqueline O'Donnell",
+      "url": "https://github.com/jackieodonnell"
+    },
+    {
+      "name": "Denasia Furniss",
+      "url": "https://denasia-furniss-portfolio.herokuapp.com/"
+    },
+    {
+      "name": "Audra Omlie",
+      "url": "https://linkedin.com/in/audraomlie"
+    },
+    {
+      "name": "LaToya Simon",
+      "url": "https://github.com/latoyadsimon"
+    },
+    {
+      "name": "Alondra Perez Cortez",
+      "url": "https://sites.google.com/view/alondra-perez-cortez/projects"
+    },
+    {
+      "name": "Cappreccia Swanson",
+      "url": "https://www.linkedin.com/in/cappreccia-swanson"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
+  }
+}
