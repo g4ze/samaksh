@@ -1,10 +1,5 @@
 # samarthak APP
 
-## Overview
-
-Four day hackathon event hosted by Girl, Develop it! A team of eight was put together to solve the following problem:
-
-- Sometimes lending money to friends and family members can cause some stress. Its always easy for someone we care about to simply "forget" to pay us back, generating a possible uncomfortable situation.
 
 ### The Goal
 
@@ -16,6 +11,7 @@ Deliver MVP with the following features:
 - Track that transaction
 - Ability for the lender to mark a transaction as "paid"
 - Ability for the lender to rate the borrower
+- Currency conversion
 
 ### Screenshots
 
