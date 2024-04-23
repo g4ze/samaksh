@@ -16,7 +16,6 @@
   justify-content: center;
   position: relative;
   width: 20em;
-  height: 20em;
 }
 
 .spinner::after {

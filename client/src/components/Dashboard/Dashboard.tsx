@@ -4,11 +4,11 @@ import { UserCtx } from "../../features/user-ctx";
 import Nav from "../Nav/Nav";
 import LoanList from "../LoanList/LoanList";
 import { LoanActionCtx } from "../../features/loan-action-ctx";
-
+import { useState } from "react";
 const Dashboard: React.FC = () => {
   const userMgr = useContext(UserCtx);
   const loanActMgr = useContext(LoanActionCtx);
-
+  const [currency, setCurrency] = useState("USD");
   return (
     <section className={classes.section}>
       <h2 className={classes.h2}>{userMgr.currentUser.user}'s</h2>
@@ -18,7 +18,8 @@ const Dashboard: React.FC = () => {
           Sorry, something went wrong, please try again.
         </p>
       )}
-      <LoanList />
+      
+      <LoanList/>
       <Nav />
     </section>
   );

@@ -20,7 +20,14 @@
 .avatar {
   width: 17.5em;
 }
-
+.select {
+  height: 5vh;
+  width: 15em;
+  outline: none;
+  border: transparent;
+  text-align: center;
+  font-family: "raleway";
+}
 .idBox {
   display: flex;
   gap: 2em;

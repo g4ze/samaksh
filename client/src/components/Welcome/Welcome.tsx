@@ -17,7 +17,7 @@ const Welcome: React.FC = () => {
   return (
     <article className={classes.article}>
       <h1 className={classes.h1}>Welcome to</h1>
-      <h2 className={classes.h2}>SAMARTHAK</h2>
+      <h2 className={classes.h2}>SAMAKSH</h2>
       <img
         src={dolladude}
         alt="cartoon 'dolla dude' with a bat and shades on"

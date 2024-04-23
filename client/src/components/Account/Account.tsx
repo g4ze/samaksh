@@ -17,7 +17,7 @@ const Account: React.FC = () => {
       >
         logout
       </span>
-      <h1>SMARTHAK</h1>
+      <h1 style={{color:'white', fontSize:'2rem'}}>SAMAKSH</h1>
       <img src={accountPic} className={classes.avatar} />
       <div className={classes.idBox}>
         <p className={classes.p}>ID</p>
@@ -26,6 +26,10 @@ const Account: React.FC = () => {
       <div className={classes.idBox}>
         <p className={classes.p}>PAYBACK SCORE</p>
         <p className={classes.user}>{userMgr.currentUser.reputation}</p>
+      </div>
+      <div className={classes.idBox}>
+        <p className={classes.p}>LOANS</p>
+        <p className={classes.user}>{userMgr.currentUser.loans.length}</p>
       </div>
       <Nav />
     </section>

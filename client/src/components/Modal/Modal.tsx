@@ -9,12 +9,14 @@ import Confirmation from "../Confirmation/Confirmation";
 import Spinner from "../Spinner/Spinner";
 import PayConfirm from "../PayConfirm/PayConfirm";
 import LendConfirm from "../LendConfirm/LendConfirm";
+import Banner from "../Banner/Banner";
 
 const Modal: React.FC = () => {
   const uiMgr = useContext(UiCtx);
 
   return (
     <Portal>
+      <Banner />
       {uiMgr.state.showAuth && <Auth />}
       {uiMgr.state.showDashboard && <Dashboard />}
       {uiMgr.state.showAccount && <Account />}

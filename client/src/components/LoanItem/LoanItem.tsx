@@ -4,7 +4,8 @@ import { UserCtx } from "../../features/user-ctx";
 import { LoanActionCtx } from "../../features/loan-action-ctx";
 import { UiCtx } from "../../features/ui-ctx";
 import { Loans } from "../../models/user";
-
+import { useState } from "react";
+import { currency1 } from "../../currencies";
 interface Props {
   obj: Loans;
   btnActive: {
@@ -15,12 +16,35 @@ interface Props {
 }
 
 const LoanItem: React.FC<Props> = ({ obj, btnActive }) => {
+
   const userMgr = useContext(UserCtx);
   const loanActMgr = useContext(LoanActionCtx);
   const uiMgr = useContext(UiCtx);
 
+  const [currency, setCurrency] = useState("USD");
+
+  const handleCurrencyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setCurrency(event.target.value);
+  };
+
+  const convertCurrency = (amount: number, currency: string) => {
+    // Add your currency conversion logic here
+    // Return the converted amount
+    if (currency === "USD") return "$"+amount;
+    return "Rs " + amount*83;
+  };
+
   return (
     <li
+      
+      className={
+        (btnActive.pending || btnActive.loans) &&
+        userMgr.currentUser.user === obj.lender
+          ? classes.liCursor
+          : classes.li
+      }
+    >
+      <p className={classes.pUser} 
       onClick={(e) => {
         e.preventDefault();
 
@@ -32,14 +56,7 @@ const LoanItem: React.FC<Props> = ({ obj, btnActive }) => {
           loanActMgr.setCurrentTransaction(obj);
         }
       }}
-      className={
-        (btnActive.pending || btnActive.loans) &&
-        userMgr.currentUser.user === obj.lender
-          ? classes.liCursor
-          : classes.li
-      }
-    >
-      <p className={classes.pUser}>
+      >
         <span>
           {obj.borrower === userMgr.currentUser.user
             ? obj.lender
@@ -52,8 +69,15 @@ const LoanItem: React.FC<Props> = ({ obj, btnActive }) => {
         </span>
       </p>
       <p className={classes.p}>
-        <span>Amount:</span>{" "}
-        <span className={classes.dataSpan}>${obj.amount}</span>
+        <span>Amount: {convertCurrency(Number(obj.amount), currency)}</span>{" "}
+        
+          
+        
+        <select value={currency} onChange={handleCurrencyChange} style={{background:'black', color:'white', borderRadius:'6px'}}>
+        <option value="USD">USD</option>
+        <option value="INR">INR</option>
+        {/* Add more currency options here */}
+      </select>
       </p>
       <p className={classes.p}>
         {btnActive.loans && "Due:"}
@@ -70,6 +94,8 @@ const LoanItem: React.FC<Props> = ({ obj, btnActive }) => {
         <span>For:</span>
         <span className={classes.dataSpan}>{obj.description}</span>
       </p>
+      
+      
     </li>
   );
 };
