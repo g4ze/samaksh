@@ -14,9 +14,8 @@ Deliver MVP with the following features:
 - Currency conversion
 
 ### Screenshots
+![Screenshot_20240424_014246](https://github.com/g4ze/samaksh/assets/102874321/c1234079-3fd7-4b53-b6d5-4ffa9175a336)
 
-![Land page](./dash.png)
-![Dash page](./home.png)
 
 ## Tech
 
