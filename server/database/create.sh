@@ -10,7 +10,7 @@ DATABASE=payback_app
 # Run the SQL scripts in sequence
 {
     echo "Dropping existing database..."
-    psql -U postgres -f "$BASEDIR/dropdb.sql"
+    dropdb -U postgres $DATABASE
 
     echo "Creating new database..."
     createdb -U postgres $DATABASE
