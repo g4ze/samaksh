@@ -1,4 +1,4 @@
-# samarthak APP
+# samaksh APP
 
 
 ### The Goal
